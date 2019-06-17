@@ -6,7 +6,7 @@ addGlobalStyles({
     border: 'none',
     boxSizing: 'border-box',
     cursor: 'default',
-    fontFamily: "'Graphik'",
+    fontFamily: 'Helvetica, sans-serif',
     listStyle: 'none',
     margin: 0,
     padding: 0,

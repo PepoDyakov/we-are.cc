@@ -16,7 +16,7 @@ export default function Head(props) {
       content="summary_large_image"
       key="twittercard"
     />,
-    <meta name="twitter:site" content="@JeliazkovDesign" key="twitterhandle" />
+    <meta name="twitter:site" content="@alextraykov" key="twitterhandle" />
   );
 
   if (url) {
@@ -30,11 +30,7 @@ export default function Head(props) {
   }
 
   return (
-    <Helmet
-      key={2}
-      defaultTitle="Denislav Jeliazkov - Digital Product Designer and Strategist"
-      titleTemplate="%s"
-    >
+    <Helmet key={2} defaultTitle="we-are.cc" titleTemplate="%s">
       {renderedTags}
     </Helmet>
   );
