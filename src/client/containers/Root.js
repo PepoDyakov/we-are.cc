@@ -8,8 +8,6 @@ import Footer from 'client/containers/Footer/Footer';
 import Home from 'client/pages/Home';
 import NotFound from 'client/pages/NotFound';
 
-import FullScreenLoader from 'client/components/FullScreenLoader/FullScreenLoader';
-
 import 'client/swiss';
 
 function Root(props) {
@@ -22,7 +20,6 @@ function Root(props) {
           <Route component={wC(NotFound)} />
         </Switch>
       </main>
-      <FullScreenLoader />
     </div>
   );
 }

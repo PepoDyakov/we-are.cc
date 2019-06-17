@@ -14,7 +14,7 @@ export default WrappedComponent => {
       const { content, addContent, location } = props;
       let isFetching;
       if (isFetching) {
-        return <FullScreenLoader loading />;
+        return <div>Loading</div>;
       }
 
       if ((!content || !content.size) && typeof window === 'undefined') {
@@ -45,7 +45,7 @@ export default WrappedComponent => {
       const { location, content } = props;
       const seo = content.get('seo');
       const helmetProps = {
-        url: `https://jeliazkovdesign.com${location.pathname}`,
+        url: `https://we-are.cc${location.pathname}`,
         headerImage: seo.image,
         description: seo.description,
       };
@@ -53,7 +53,7 @@ export default WrappedComponent => {
     };
 
     if (!props.content) {
-      return <FullScreenLoader loading />;
+      return <div>Loading</div>;
     }
 
     return (
