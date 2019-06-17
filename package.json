@@ -1,0 +1,65 @@
+{
+  "name": "we-are.cc",
+  "version": "1.0.0",
+  "description": "we-are.cc",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "rimraf ./dist && mkdir dist && ncp statics dist/public",
+    "start:webpack": "webpack --progress --watch",
+    "start:server": "nodemon ./src/server/index.js --exec babel-node",
+    "start": "npm-run-all --parallel start:webpack start:server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PepoDyakov/we-are.cc.git"
+  },
+  "keywords": [
+    "personal",
+    "website",
+    "blog"
+  ],
+  "author": "Petar Dyakov Denislav Zhelyazkov",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/node": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-arrow-functions": "^7.2.0",
+    "@babel/plugin-transform-classes": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.5",
+    "babel-plugin-inline-react-svg": "^1.1.0",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "body-parser": "^1.19.0",
+    "contentful": "^7.5.1",
+    "file-loader": "^3.0.1",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "immutable": "^4.0.0-rc.12",
+    "nodemon": "^1.19.0",
+    "npm-run-all": "^4.1.5",
+    "react-helmet": "^5.2.1",
+    "svg-inline-loader": "^0.8.0",
+    "svg-inline-react": "^3.1.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.3.1"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-chain": "0.0.5",
+    "express-handlebars": "^3.0.2",
+    "ncp": "^2.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router": "^5.0.0",
+    "react-router-dom": "^5.0.0",
+    "redux": "^4.0.1",
+    "redux-immutable": "^4.0.0",
+    "swiss-react": "^0.4.15"
+  }
+}
