@@ -20,10 +20,9 @@ router.get(
 router.get(
   '*',
   redirectTrailingSlash('req', 'res'),
-  fetchFooter.save('footer'),
   fetchNavBar.save('navbar'),
   fetchContent('req.url'),
-  createReduxStore('footer', 'navbar', 'result:content').save('store'),
+  createReduxStore('navbar', 'result:content').save('store'),
   renderInnerApp('store', 'req', 'res').save(
     'result.page',
     'result.helmet',

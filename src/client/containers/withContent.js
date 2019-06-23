@@ -46,8 +46,9 @@ export default WrappedComponent => {
       const seo = content.get('seo');
       const helmetProps = {
         url: `https://we-are.cc${location.pathname}`,
-        headerImage: seo.image,
-        description: seo.description,
+        headerImage: seo.getIn(['image', 'fields', 'file', 'url']),
+        description: seo.get('description'),
+        title: seo.get('title'),
       };
       return <Head key="head" {...helmetProps} />;
     };
@@ -67,7 +68,6 @@ export default WrappedComponent => {
   const mapStateToProps = (state, props) => {
     return {
       content: state.getIn(['content', props.location.pathname]),
-      footer: state.getIn(['footer', 'fields', 'navigation']),
       navBar: state.getIn(['navBar', 'fields', 'navigation']),
     };
   };

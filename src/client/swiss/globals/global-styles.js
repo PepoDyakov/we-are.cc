@@ -9,6 +9,7 @@ addGlobalStyles({
   '.content': {
     _size: '100%',
     _flex: ['column', 'left', 'top'],
+    padding: '0 130px',
     maxWidth: '1920px',
     margin: '0 auto',
     backgroundColor: '#ffffff',

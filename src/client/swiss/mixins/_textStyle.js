@@ -34,8 +34,8 @@ addMixin('textStyle', (style = 'item') => {
       };
     case 'navbar':
       return {
-        _font: ['18px', '$grey2', '18px', '$regular'],
-        letterSpacing: '-0.58px',
+        _font: ['32px', '#000000', '38px', '$bold'],
+        textTransform: 'lowercase',
       };
   }
 });

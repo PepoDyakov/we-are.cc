@@ -5,9 +5,8 @@ import contentReducer from 'client/redux/reducers/contentReducer';
 
 export default makeMiddleware(
   'createReduxStore',
-  ({ content, footer, navbar }, next) => {
+  ({ content, navbar }, next) => {
     const initialState = (content && { content }) || {};
-    initialState.footer = footer;
     initialState.navBar = navbar;
     // Create initial instance of REDUX Store
     const store = createStore(contentReducer, fromJS(initialState));

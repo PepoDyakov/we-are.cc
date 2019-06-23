@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 
 export default function Head(props) {
-  const { url, headerImage, description } = props;
+  const { url, headerImage, description, title } = props;
   let renderedTags = [];
   if (description) {
     renderedTags.push(
@@ -29,8 +29,13 @@ export default function Head(props) {
     );
   }
 
+  if (title) {
+    renderedTags.push(<title key="titleTag">{title}</title>);
+    renderedTags.push(<meta name="title" content={title} key="title" />);
+  }
+
   return (
-    <Helmet key={2} defaultTitle="we-are.cc" titleTemplate="%s">
+    <Helmet key="we-are.cc" defaultTitle="we-are.cc" titleTemplate="%s">
       {renderedTags}
     </Helmet>
   );

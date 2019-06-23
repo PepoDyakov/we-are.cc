@@ -3,7 +3,7 @@ import contentfulClient from '../utils/contentfulClient';
 export default callback => {
   const query = {
     content_type: 'navBar',
-    order: '-sys.createdAt',
+    order: 'sys.createdAt',
   };
 
   contentfulClient

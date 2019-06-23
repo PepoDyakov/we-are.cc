@@ -4,7 +4,7 @@ import generateSEO from '../utils/generateSEO';
 export default (url, callback) => {
   const pageQuery = {
     content_type: 'home',
-    'fields.slug': 'home',
+    'fields.slug': 'index',
     include: 3,
   };
 
@@ -15,7 +15,6 @@ export default (url, callback) => {
     .then(response => {
       resObj.page = response.items[0];
       resObj.seo = generateSEO(response.items[0]);
-
       callback(null, resObj);
     })
     .catch(err => {
