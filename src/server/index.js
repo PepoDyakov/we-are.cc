@@ -13,4 +13,4 @@ app.use(express.static(path.join(__dirname, '../../dist/public')));
 
 app.use('/', bodyParser.json(), routes);
 
-app.listen(1234);
+app.listen(3000);

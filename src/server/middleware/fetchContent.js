@@ -11,14 +11,7 @@ export default makeMiddleware('fetchContent', ({ url }, next) => {
 
   const [full, type, slug, index] = new RegExp(regEx).exec(url);
 
-  let query = null;
-  if (url === '/') {
-    query = indexQuery;
-  } else if (url === '/test') {
-    query = testQuery;
-  }
-
-  query(url, (err, res) => {
+  let callback = (err, res) => {
     let content = res;
     if (err) {
       content = { err };
@@ -27,5 +20,12 @@ export default makeMiddleware('fetchContent', ({ url }, next) => {
     next(null, {
       [url]: content,
     });
-  });
+  };
+  switch (url) {
+    case '/':
+      indexQuery(url, callback);
+      break;
+    default:
+      break;
+  }
 });

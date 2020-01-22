@@ -1,7 +1,6 @@
 import React from 'react';
-import { hydrate } from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import ReactDOM from 'react-dom';
 import { fromJS } from 'immutable';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
@@ -9,6 +8,7 @@ import { SwissProvider } from 'swiss-react';
 import Root from 'client/containers/Root';
 import contentReducer from 'client/redux/reducers/contentReducer';
 
+const renderMethod = module.hot ? ReactDOM.render : ReactDOM.hydrate;
 const preloadedState = JSON.parse(
   window.__PRELOADED_STATE__
     .replace(/\n/g, '\\n')
@@ -21,8 +21,7 @@ delete window.__PRELOADED_STATE__;
 
 const store = createStore(contentReducer, fromJS(preloadedState));
 window.getState = store.getState;
-
-hydrate(
+renderMethod(
   <Provider store={store}>
     <SwissProvider>
       <BrowserRouter>

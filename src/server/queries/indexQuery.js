@@ -1,7 +1,7 @@
 import contentfulClient from '../utils/contentfulClient';
 import generateSEO from '../utils/generateSEO';
 
-export default (url, callback) => {
+export default function(url, callback) {
   const pageQuery = {
     content_type: 'home',
     'fields.slug': 'index',
@@ -20,4 +20,4 @@ export default (url, callback) => {
     .catch(err => {
       callback(err);
     });
-};
+}

@@ -1,18 +1,17 @@
 import contentfulClient from '../utils/contentfulClient';
 
-export default callback => {
+export default function(callback) {
   const query = {
     content_type: 'navBar',
-    order: 'sys.createdAt',
   };
 
   contentfulClient
     .getEntries(query)
     .then(response => {
-      const navbar = response.items[0];
-      callback(null, navbar);
+      const respObj = response.items[0];
+      callback(null, respObj);
     })
     .catch(err => {
       callback(err);
     });
-};
+}

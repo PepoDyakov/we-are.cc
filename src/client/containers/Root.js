@@ -36,9 +36,4 @@ const mapStateToProps = (state, props) => {
   };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    null
-  )(Root)
-);
+export default withRouter(connect(mapStateToProps, null)(Root));
